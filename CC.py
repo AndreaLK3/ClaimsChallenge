@@ -172,7 +172,7 @@ def exe():
     num_samples = len(df.index)
     for cv in cat_variables_to_encode:
         df_1[cv] = label_enc.fit_transform(df[cv])
-        # since weare encoding one feature at a time, we reshape the array
+        # since we are encoding one feature at a time, we reshape the array
         df_1[cv] = oh_enc.fit_transform(np.array((df_1[cv])).reshape((num_samples,1))).todense()
 
     return df_1
